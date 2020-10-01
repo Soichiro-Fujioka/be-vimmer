@@ -60,6 +60,11 @@ set title
 set hlsearch
 set noswapfile
 set showcmd
+"Short Cut Settings
+nnoremap gr :tabprevious
+
+
+
 
 "NERDTree settings-------------
 let NERDTreeShowHidden=1
