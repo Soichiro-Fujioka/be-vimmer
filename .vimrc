@@ -26,7 +26,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('Shougo/deoplete.nvim')
 	call dein#add('roxma/nvim-yarp')
 	call dein#add('roxma/vim-hug-neovim-rpc')
-
+	call dein#add('reireias/vim-cheatsheet')
 	"Required:
   call dein#end()
   call dein#save_state()
@@ -60,11 +60,12 @@ set title
 set hlsearch
 set noswapfile
 set showcmd
+set encoding=UTF-8
 "Short Cut Settings
-nnoremap gr :tabprevious
+nnoremap gr :tabprevious<CR>
 
-
-
+"vim-cheatsheet setting-------
+let g:cheatsheet#cheat_file = '~/.vim/cheatsheet.md'
 
 "NERDTree settings-------------
 let NERDTreeShowHidden=1
