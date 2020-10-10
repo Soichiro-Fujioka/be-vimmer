@@ -39,9 +39,13 @@ endif
 
 "End dein Scripts-------------------------
 
+"colorscheme-------
+colorscheme gruvbox
+"colorscheme zenburn
+"colorscheme iceberg
+
 filetype plugin indent on
 syntax enable
-colorscheme iceberg
 syntax on
 filetype plugin indent on
 set background=dark
