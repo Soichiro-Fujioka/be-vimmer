@@ -40,8 +40,8 @@ endif
 "End dein Scripts-------------------------
 
 "colorscheme-------
-colorscheme gruvbox
-"colorscheme zenburn
+"colorscheme gruvbox
+colorscheme zenburn
 "colorscheme iceberg
 
 filetype plugin indent on
@@ -53,6 +53,7 @@ set mouse=a
 set nocompatible
 filetype plugin on
 runtime macros/matchit.vim
+set backspace=indent,eol,start
 set tabstop=2
 set shiftwidth=2
 set number
