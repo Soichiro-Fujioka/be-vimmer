@@ -39,35 +39,40 @@ endif
 
 "End dein Scripts-------------------------
 
+"-----カラースキーマの設定----
 "colorscheme-------
 "colorscheme gruvbox
 colorscheme zenburn
 "colorscheme iceberg
-
-filetype plugin indent on
-syntax enable
-syntax on
-filetype plugin indent on
 set background=dark
-set mouse=a
-set nocompatible
-filetype plugin on
-runtime macros/matchit.vim
-set backspace=indent,eol,start
-set tabstop=2
-set shiftwidth=2
-set number
-set autoindent
-set smartindent
-set cursorline
-set title
-"highlight LineNr
-set hlsearch
-set noswapfile
-set showcmd
-set encoding=UTF-8
-"Short Cut Settings
+"-----------------------------
+
+"----------基本設定-----------
+set nocompatible                   "vi互換モードを許可しない
+filetype plugin indent on          "ファイルタイプの自動検出、ファイルタイプ用のプラグインとインデント設定を自動で読み込み
+syntax enable                      "シンタックスハイライトを有効にする
+set mouse=a                        "マウス操作を許可する
+runtime macros/matchit.vim         "タグのジャンプを拡張する(%を使用)
+set backspace=indent,eol,start     "バックスペースによる削除
+set tabstop=2                      "タブ幅を半角スペース2文字分にする
+set shiftwidth=2                   "自動インデントでずれる幅
+set number                         "行数を表示
+set autoindent                     "改行時に前の行のインデントを継承
+set smartindent                    "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+set cursorline                     "カーソル行をハイライトする
+set title                          "タイトルを表示する
+set hlsearch                       "検索結果をハイライトする
+set noswapfile                     "スワップファイルを作成しない
+set showcmd                        "入力中のコマンドを表示する
+set encoding=UTF-8                 "エンコーディングをUTF-8にする
+"-----------------------------
+
+"--------キーマップ--------
 nnoremap gr :tabprevious<CR>
+
+
+
+
 
 "vim-cheatsheet setting-------
 let g:cheatsheet#cheat_file = '~/.vim/cheatsheet.md'
