@@ -12,7 +12,7 @@ if dein#load_state('~/.cache/dein')
 
   " Add or remove your plugins here like this:
 	" sh ./installer.sh ~/.cache/dein
-	call dein#add('scrooloose/nerdtree')
+	"call dein#add('scrooloose/nerdtree')
 	call dein#add('tpope/vim-fugitive')
 	call dein#add('tpope/vim-surround')
 	call dein#add('tpope/vim-commentary')
@@ -27,6 +27,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('roxma/nvim-yarp')
 	call dein#add('roxma/vim-hug-neovim-rpc')
 	call dein#add('reireias/vim-cheatsheet')
+	call dein#add('Shougo/defx.nvim')
 	"Required:
   call dein#end()
   call dein#save_state()
