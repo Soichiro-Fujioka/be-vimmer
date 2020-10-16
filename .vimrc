@@ -68,30 +68,29 @@ set showcmd                        "入力中のコマンドを表示する
 set encoding=UTF-8                 "エンコーディングをUTF-8にする
 "-----------------------------
 
-"--------キーマップ--------
-nnoremap gr :tabprevious<CR>
-
-
-
-
-
-"vim-cheatsheet setting-------
+"-----vim-cheatsheet setting-------
 let g:cheatsheet#cheat_file = '~/.vim/cheatsheet.md'
 
-"NERDTree settings-------------
-let NERDTreeShowHidden=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nnoremap <silent><C-1> :NERDTreeToggle<CR>
-"ale settings------------------
+"-----NERDTree settings-------------
+"let NERDTreeShowHidden=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"nnoremap <silent><C-1> :NERDTreeToggle<CR>
+
+"----------ale settings----------
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 "let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
-"completion settings(https://note.com/yasukotelin/n/na87dc604e042)
+
+"----------completion settings----------
+"ref: (https://note.com/yasukotelin/n/na87dc604e042)
 let g:deoplete#enable_at_startup = 1
 set completeopt+=menuone
 set completeopt+=noinsert
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+
+"----------キーマップ----------
+nnoremap gr :tabprevious<CR>
