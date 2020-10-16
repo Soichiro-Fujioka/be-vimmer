@@ -34,9 +34,9 @@ if dein#load_state('~/.cache/dein')
 endif
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
@@ -94,8 +94,14 @@ inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
 "----------キーマップ----------
 nnoremap gr :tabprevious<CR>
-
-
+nmap ss :split<Return><C-w>w              "水平に分割
+nmap sv :vsplit<Return><C-w>w             "垂直に分割
+map sh <C-w>h                             "画面のフォーカスを左へ移動
+map sk <C-w>k                             "画面のフォーカスを上へ移動
+map sj <C-w>j                             "画面のフォーカスを下へ移動
+map sl <C-w>l                             "画面のフォーカスを右へ移動
+nmap <S-Tab> :tabprev<Return>             "前のタブへ移動
+nmap <Tab> :tabnext<Return>               "次のタブへ移動
 
 
 
