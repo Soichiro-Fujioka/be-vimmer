@@ -16,4 +16,5 @@ ln -s be-vimmer/.tmux.conf .tmux.conf
 - .bashrcに以下を記載
 ```
 alias ide="~/.scripts/ide.sh"
+export TERM=xterm-256color 
 ```
