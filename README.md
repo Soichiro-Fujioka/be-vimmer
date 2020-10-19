@@ -21,3 +21,9 @@ export TERM=xterm-256color
 ### キーバインド
 - `.vim/cheatsheet.md`にチートシートがあります
 - vim起動中に`:Cheat`でチートできます
+
+### トラブルシューティング
+- vimで使用しているpythonを確認する
+```
+:pythonx print(sys.version); print(sys.path)
+```
