@@ -18,3 +18,6 @@ ln -s be-vimmer/.tmux.conf .tmux.conf
 alias ide="~/.scripts/ide.sh"
 export TERM=xterm-256color 
 ```
+### キーバインド
+- `.vim/cheatsheet.md`にチートシートがあります
+- vim起動中に`:Cheat`でチートできます
