@@ -75,9 +75,16 @@ map sj <C-w>j                             "画面のフォーカスを下へ移�
 map sl <C-w>l                             "画面のフォーカスを右へ移動
 nmap <S-Tab> :tabprev<Return>             "前のタブへ移動
 nmap <Tab> :tabnext<Return>               "次のタブへ移動
-nmap sf :Defx -show-ignored-files<CR>                        "ファイルエクスプローラーを起動
-
-
+nmap sf :Defx -show-ignored-files<CR>     "ファイルエクスプローラーを起動
+"----------git-fugitive----------
+nnoremap <leader>ga :Git add %:p<CR><CR>  "git add
+nnoremap <leader>gc :Gcommit<CR><CR>      "git commit
+nnoremap <leader>gs :Gstatus<CR>          "git status
+nnoremap <leader>gp :Gpush<CR>            "git push
+nnoremap <leader>gd :Gdiff<CR>            "git diff
+nnoremap <leader>gl :Glog<CR>             "git log
+nnoremap <leader>gb :Gblame<CR>           "git blame
+nnoremap <leader>gw :Gwrite<CR>           "git add
 "####################################
 "##        plugin独自の設定        ##
 "####################################
