@@ -28,6 +28,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('roxma/vim-hug-neovim-rpc')
 	call dein#add('reireias/vim-cheatsheet')
 	call dein#add('Shougo/defx.nvim')
+	call dein#add('alvan/vim-closetag')
 	"Required:
   call dein#end()
   call dein#save_state()
@@ -134,3 +135,9 @@ set completeopt+=noinsert
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+"----------vim-closetag settings----------
+let g:closetag_shortcut = '>'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.tsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.tsx'
+let g:closetag_filetypes = 'html,xhtml,phtml,jsx,tsx'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,tsx'
