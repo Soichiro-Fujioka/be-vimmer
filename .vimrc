@@ -41,10 +41,10 @@ endif
 "End dein Scripts-------------------------
 
 "----------カラースキーマの設定----------
-"colorscheme-------
 colorscheme gruvbox
 "colorscheme zenburn
 "colorscheme iceberg
+set background=dark
 
 "----------基本設定-----------
 set nocompatible                          "vi互換モードを許可しない
