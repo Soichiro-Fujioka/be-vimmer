@@ -110,6 +110,8 @@ autocmd FileType defx call s:defx_my_settings()
 	  \ defx#do_action('cd')
 	  nnoremap <silent><buffer><expr> sf
 	  \ defx#do_action('quit')
+		nnoremap <silent><buffer><expr> cd
+		\ defx#do_action('change_vim_cwd')
 	endfunction
 
 "-----vim-cheatsheet setting-------
