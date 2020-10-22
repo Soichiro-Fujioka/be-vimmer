@@ -17,6 +17,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-surround')
 	call dein#add('tpope/vim-commentary')
 	call dein#add('vim-airline/vim-airline')
+	call dein#add('vim-airline/vim-airline-themes')
 	call dein#add('dense-analysis/ale')
 	call dein#add('prettier/vim-prettier')
 	call dein#add('sheerun/vim-polyglot')
@@ -57,7 +58,7 @@ set backspace=indent,eol,start            "バックスペースによる削除
 set tabstop=2                             "タブ幅を半角スペース2文字分にする
 set shiftwidth=2                          "自動インデントでずれる幅
 set number                                "行数を表示
-set autoindent                            "改行時に前の行のインデントを継承
+"set autoindent                            "改行時に前の行のインデントを継承
 set smartindent                           "改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set cursorline                            "カーソル行をハイライトする
 set title                                 "タイトルを表示する
@@ -65,6 +66,7 @@ set hlsearch                              "検索結果をハイライトする
 set noswapfile                            "スワップファイルを作成しない
 set showcmd                               "入力中のコマンドを表示する
 set encoding=UTF-8                        "エンコーディングをUTF-8にする
+set splitbelow                            "新規ウィンドウを下に開く
 
 "----------キーマップ----------
 nnoremap gr :tabprevious<CR>
@@ -114,10 +116,13 @@ autocmd FileType defx call s:defx_my_settings()
 		\ defx#do_action('change_vim_cwd')
 	endfunction
 
-"-----vim-cheatsheet setting-------
+"----------vim airline theme settings----------
+let g:airline_theme='cobalt2'
+
+"----------vim-cheatsheet setting------------
 let g:cheatsheet#cheat_file = '~/.vim/cheatsheet.md'
 
-"-----NERDTree settings-------------
+"----------NERDTree settings-------------
 "let NERDTreeShowHidden=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -132,8 +137,14 @@ let g:ale_sign_column_always = 1
 "----------completion settings----------
 "ref: (https://note.com/yasukotelin/n/na87dc604e042)
 let g:deoplete#enable_at_startup = 1
-set completeopt+=menuone
-set completeopt+=noinsert
+call deoplete#custom#option({
+       \   'auto_complete_delay': 0,
+       \   'smart_case': v:true,
+       \ })
+let g:deoplete#enable_ignore_case = 1
+autocmd CompleteDone * silent! pclose!
+set completeopt=popup,noinsert
+set complete+=kspell
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
