@@ -11,6 +11,7 @@ ln -s be-vimmer/.vimrc .vimrc
 ln -s be-vimmer/.vim/ .vim
 ln -s be-vimmer/.scripts .scripts
 ln -s be-vimmer/.tmux.conf .tmux.conf
+ln -s be-vimmer/.config/powerline-shell/config.json .config/powerline-shell/config.json
 ```
 - call dein#check_install()でプラグインのインストール
 - .bashrcに以下を記載
