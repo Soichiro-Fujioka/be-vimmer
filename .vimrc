@@ -18,7 +18,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-commentary')
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('vim-airline/vim-airline-themes')
-	call dein#add('edkolev/tmuxline.vim')
+	"call dein#add('edkolev/tmuxline.vim')
 	call dein#add('dense-analysis/ale')
 	call dein#add('prettier/vim-prettier')
 	call dein#add('sheerun/vim-polyglot')
@@ -119,13 +119,13 @@ autocmd FileType defx call s:defx_my_settings()
 
 "----------vim airline theme settings----------
 let g:airline_theme='cobalt2'
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : ['#I', '#W'],
-      \'cwin' : ['#I', '#W', '#F'],
-      \'y'    : ['%R', '%a', '%Y'],
-      \'z'    : '#H'}
-let g:tmuxline_theme = 'cobalt2'
+" let g:tmuxline_preset = {
+"       \'a'    : '#S',
+"       \'win'  : ['#I', '#W'],
+"       \'cwin' : ['#I', '#W', '#F'],
+"       \'y'    : ['%R', '%a', '%Y'],
+"       \'z'    : '#H'}
+" let g:tmuxline_theme = 'cobalt2'
 
 "----------vim-cheatsheet setting------------
 let g:cheatsheet#cheat_file = '~/.vim/cheatsheet.md'
