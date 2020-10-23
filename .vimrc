@@ -18,6 +18,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-commentary')
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('vim-airline/vim-airline-themes')
+	call dein#add('edkolev/tmuxline.vim')
 	call dein#add('dense-analysis/ale')
 	call dein#add('prettier/vim-prettier')
 	call dein#add('sheerun/vim-polyglot')
@@ -80,14 +81,14 @@ nmap <S-Tab> :tabprev<Return>             "前のタブへ移動
 nmap <Tab> :tabnext<Return>               "次のタブへ移動
 nmap sf :Defx -show-ignored-files<CR>     "ファイルエクスプローラーを起動
 "----------git-fugitive----------
-nnoremap <leader>ga :Git add %:p<CR><CR>  "git add
-nnoremap <leader>gc :Gcommit<CR><CR>      "git commit
-nnoremap <leader>gs :Gstatus<CR>          "git status
-nnoremap <leader>gp :Gpush<CR>            "git push
-nnoremap <leader>gd :Gdiff<CR>            "git diff
-nnoremap <leader>gl :Glog<CR>             "git log
-nnoremap <leader>gb :Gblame<CR>           "git blame
-nnoremap <leader>gw :Gwrite<CR>           "git add
+nnoremap <leader>Ga :Git add %:p<CR><CR>  "git add
+nnoremap <leader>Gc :Gcommit<CR><CR>      "git commit
+nnoremap <leader>Gs :Gstatus<CR>          "git status
+nnoremap <leader>Gp :Gpush<CR>            "git push
+nnoremap <leader>Gd :Gdiff<CR>            "git diff
+nnoremap <leader>Gl :Glog<CR>             "git log
+nnoremap <leader>Gb :Gblame<CR>           "git blame
+nnoremap <leader>Gw :Gwrite<CR>           "git add
 "####################################
 "##        plugin独自の設定        ##
 "####################################
@@ -118,6 +119,13 @@ autocmd FileType defx call s:defx_my_settings()
 
 "----------vim airline theme settings----------
 let g:airline_theme='cobalt2'
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W', '#F'],
+      \'y'    : ['%R', '%a', '%Y'],
+      \'z'    : '#H'}
+let g:tmuxline_theme = 'cobalt2'
 
 "----------vim-cheatsheet setting------------
 let g:cheatsheet#cheat_file = '~/.vim/cheatsheet.md'
