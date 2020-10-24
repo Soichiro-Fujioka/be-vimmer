@@ -1,19 +1,24 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["json", "css", "markdown"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "json",
+    "css",
+    "markdown",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "coc.preferences.formatOnType": true,
   "eslint.autoFixOnSave": true,
   "eslint.autoFix": true,
-  "tsserver.enableJavascript": false,
-  "languageserver": {
-    "flow": {
-      "command": "flow",
-      "args": ["lsp"],
-      "filetypes": ["javascript", "javascriptreact", "typescript"],
-      "initializationOptions": {},
-      "requireRootPattern": true,
-      "settings": {},
-      "rootPatterns": [".flowconfig"]
-    }
-  },
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "tsserver.enableJavascript": true,
+  "prettier.disableSuccessMessage": true,
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "",

@@ -4,7 +4,7 @@ vim と仲良くなるための設定
 
 # 必要環境
 
-- vim version > 8.2
+- neovim
 - tmux
 - silversearcher-ag
 
@@ -18,14 +18,14 @@ ln -s be-vimmer/.vimrc .vimrc
 ln -s be-vimmer/.vim/ .vim
 ln -s be-vimmer/.scripts .scripts
 ln -s be-vimmer/.tmux.conf .tmux.conf
-ln -s be-vimmer/.vim/coc-settings.json .vim/coc-settings.json
-ln -s be-vimmer/.config/powerline-shell/config.json .config/powerline-shell/config.json
+ln -s be-vimmer/.config .config
 ```
 
 - call dein#check_install()でプラグインのインストール
 - .bashrc に以下を記載
 
 ```
+alias vim="$(which nvim)"
 alias ide="~/.scripts/ide.sh"
 export TERM=xterm-256color
 ```
