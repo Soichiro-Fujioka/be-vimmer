@@ -97,6 +97,11 @@ nnoremap <leader>Gw :Gwrite<CR>           "git add
 "####################################
 
 "----------Defxの設定----------
+nnoremap <silent>sf :<C-u>Defx -listed -resume
+      \ -columns=indent:mark:icon:icons:filename:git:size
+      \ -buffer-name=tab`tabpagenr()`
+      \ `expand('%:p:h')` -search=`expand('%:p')`<CR>
+
 call defx#custom#column('icon', {
 	\ 'directory_icon': '▸',
 	\ 'opened_icon': '▾',
