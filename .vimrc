@@ -1,3 +1,7 @@
+"How to uninstall plugins
+":call map(dein#check_clean(), "delete(v:val, 'rf')")
+":call dein#recache_runtimepath()
+
 "dein Scripts-----------------------------
 " Required:
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
@@ -18,13 +22,12 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-commentary')
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('vim-airline/vim-airline-themes')
-	"call dein#add('edkolev/tmuxline.vim')
 	call dein#add('dense-analysis/ale')
 	call dein#add('prettier/vim-prettier')
 	call dein#add('sheerun/vim-polyglot')
 	call dein#add('jiangmiao/auto-pairs')
 	call dein#add('simeji/winresizer')
-	"call dein#add('neoclide/coc.nvim')
+  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
 	call dein#add('Shougo/deoplete.nvim')
 	call dein#add('roxma/nvim-yarp')
 	call dein#add('roxma/vim-hug-neovim-rpc')
@@ -79,7 +82,7 @@ map sj <C-w>j                             "画面のフォーカスを下へ移�
 map sl <C-w>l                             "画面のフォーカスを右へ移動
 nmap <S-Tab> :tabprev<Return>             "前のタブへ移動
 nmap <Tab> :tabnext<Return>               "次のタブへ移動
-nmap sf :Defx -show-ignored-files<CR>     "ファイルエクスプローラーを起動
+" nmap sf :Defx -show-ignored-files<CR>     "ファイルエクスプローラーを起動
 "----------git-fugitive----------
 nnoremap <leader>Ga :Git add %:p<CR><CR>  "git add
 nnoremap <leader>Gc :Gcommit<CR><CR>      "git commit
@@ -94,6 +97,21 @@ nnoremap <leader>Gw :Gwrite<CR>           "git add
 "####################################
 
 "----------Defxの設定----------
+call defx#custom#column('icon', {
+	\ 'directory_icon': '▸',
+	\ 'opened_icon': '▾',
+	\ 'root_icon': ' ',
+	\ })
+call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : 'M',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Ignored'   : '☒',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
 autocmd FileType defx call s:defx_my_settings()
 	function! s:defx_my_settings() abort
 	  " Define mappings
@@ -116,16 +134,24 @@ autocmd FileType defx call s:defx_my_settings()
 		nnoremap <silent><buffer><expr> cd
 		\ defx#do_action('change_vim_cwd')
 	endfunction
+call defx#custom#column('icon', {
+	\ 'directory_icon': '▸',
+	\ 'opened_icon': '▾',
+	\ 'root_icon': ' ',
+	\ })
+call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : 'M',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Ignored'   : '☒',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
 
 "----------vim airline theme settings----------
 let g:airline_theme='cobalt2'
-" let g:tmuxline_preset = {
-"       \'a'    : '#S',
-"       \'win'  : ['#I', '#W'],
-"       \'cwin' : ['#I', '#W', '#F'],
-"       \'y'    : ['%R', '%a', '%Y'],
-"       \'z'    : '#H'}
-" let g:tmuxline_theme = 'cobalt2'
 
 "----------vim-cheatsheet setting------------
 let g:cheatsheet#cheat_file = '~/.vim/cheatsheet.md'
@@ -144,7 +170,7 @@ let g:ale_sign_column_always = 1
 
 "----------completion settings----------
 "ref: (https://note.com/yasukotelin/n/na87dc604e042)
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0 
 call deoplete#custom#option({
        \   'auto_complete_delay': 0,
        \   'smart_case': v:true,
