@@ -25,7 +25,11 @@ export TERM=xterm-256color
 - vim起動中に`:Cheat`でチートできます
 
 ### トラブルシューティング
-- vimで使用しているpythonを確認する
-```
-:pythonx print(sys.version); print(sys.path)
-```
+- 補完が上手く機能しない
+	- 補完で使用しているpython packageがインストールされているか確認する
+	- vimで使用しているpythonを確認する
+	```
+	:pythonx print(sys.version); print(sys.path)
+	```
+- ファイラーのフォントが適応されない
+	- nerd fontがインストールされているか確認する

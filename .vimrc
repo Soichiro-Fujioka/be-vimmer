@@ -27,6 +27,9 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('sheerun/vim-polyglot')
 	call dein#add('jiangmiao/auto-pairs')
 	call dein#add('simeji/winresizer')
+	call dein#add('ryanoasis/vim-devicons')
+	call dein#add('kristijanhusak/defx-icons')
+	call dein#add('kristijanhusak/defx-git')
   call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
 	call dein#add('Shougo/deoplete.nvim')
 	call dein#add('roxma/nvim-yarp')
@@ -98,25 +101,8 @@ nnoremap <leader>Gw :Gwrite<CR>           "git add
 
 "----------Defxの設定----------
 nnoremap <silent>sf :<C-u>Defx -listed -resume
-      \ -columns=indent:mark:icon:icons:filename:git:size
-      \ -buffer-name=tab`tabpagenr()`
-      \ `expand('%:p:h')` -search=`expand('%:p')`<CR>
+      \ -columns=icon:indent:icons:filename:git:type<CR>
 
-call defx#custom#column('icon', {
-	\ 'directory_icon': '▸',
-	\ 'opened_icon': '▾',
-	\ 'root_icon': ' ',
-	\ })
-call defx#custom#column('git', 'indicators', {
-  \ 'Modified'  : 'M',
-  \ 'Staged'    : '✚',
-  \ 'Untracked' : '✭',
-  \ 'Renamed'   : '➜',
-  \ 'Unmerged'  : '═',
-  \ 'Ignored'   : '☒',
-  \ 'Deleted'   : '✖',
-  \ 'Unknown'   : '?'
-  \ })
 autocmd FileType defx call s:defx_my_settings()
 	function! s:defx_my_settings() abort
 	  " Define mappings
@@ -139,6 +125,7 @@ autocmd FileType defx call s:defx_my_settings()
 		nnoremap <silent><buffer><expr> cd
 		\ defx#do_action('change_vim_cwd')
 	endfunction
+
 call defx#custom#column('icon', {
 	\ 'directory_icon': '▸',
 	\ 'opened_icon': '▾',
