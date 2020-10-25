@@ -4,7 +4,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]   
 repo = 'tpope/vim-fugitive'                                                                                                           
 hook_add = """
-source ~/.config/nvim/plugins/git-fugitive.rc.vim
+source ~/.config/nvim/plugins/vim-fugitive.rc.vim
 """
 
 [[plugins]]   
