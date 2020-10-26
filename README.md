@@ -30,6 +30,12 @@ alias ide="~/.scripts/ide.sh"
 export TERM=xterm-256color
 ```
 
+### 起動
+
+- `tmux`で環境起動
+- `ide`コマンドで上下に画面分割が可能です
+  - `ide 1`コマンドで上下に分割し、更に下の画面を左右に分割します
+
 ### キーバインド
 
 - `.vim/cheatsheet.md`にチートシートがあります
