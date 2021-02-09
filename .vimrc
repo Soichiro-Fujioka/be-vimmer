@@ -23,7 +23,7 @@ set noswapfile                            "スワップファイルを作成し�
 set showcmd                               "入力中のコマンドを表示する
 set encoding=UTF-8                        "エンコーディングをUTF-8にする
 set splitbelow                            "新規ウィンドウを下に開く
-
+set relativenumber                        "相対行を表示する
 "----------キーマップ----------
 nnoremap gr :tabprevious<CR>
 nmap ss :split<Return><C-w>w              "水平に分割
@@ -78,3 +78,6 @@ endif
 if dein#check_install()
   call dein#install()
 endif
+
+"nvim python3 setting
+let g:python3_host_prog = '/usr/bin/python3'
