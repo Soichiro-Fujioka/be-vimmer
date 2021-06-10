@@ -1,4 +1,6 @@
 .config/coc/
+.config/nvim/.netrwhist
+.config/iterm2/
 .config/configstore/
 .config/nextjs-nodejs/
 .vim/.netrwhist/
