@@ -1,5 +1,7 @@
-nnoremap <silent>sf :<C-u>Defx -listed -resume -show-ignored-files
-      \ -columns=icon:indent:icons:filename:git:type<CR>
+if !exists('g:vscode')
+	nnoremap <silent>sf :<C-u>Defx -listed -resume -show-ignored-files
+				\ -columns=icon:indent:icons:filename:git:type<CR>
+endif
 
 autocmd FileType defx call s:defx_my_settings()
 	function! s:defx_my_settings() abort

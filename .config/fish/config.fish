@@ -15,6 +15,10 @@ function fish_prompt
     powerline-shell --shell bare $status
 end
 
+function fish_mode_prompt
+end
+
+
 # set git shortcut
 alias g='git'
 alias gb='git branch'
@@ -30,3 +34,9 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 status is-interactive; and pyenv init --path | source
 pyenv init - | source
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# eval /Users/soichiro/opt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
